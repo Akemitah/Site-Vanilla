@@ -1,0 +1,152 @@
+/* BODY */
+body{
+  margin: 0;
+  border: 0;
+  font-family: 'Monotype Corsiva', 'ItalicC', cursive;
+}
+
+/* HEADER */
+header{
+  background-color: rgb(244, 240, 236);
+}
+
+/* Header container vira flex e sem posicionamentos absolutos */
+.divHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 5vw;
+  position: relative; /* mantém sua classe, mas agora sem nav absoluto */
+}
+
+/* Logo responsiva */
+.logo{
+  width: clamp(120px, 12vw, 180px);
+  height: auto;
+  display: block;
+  /* removido: padding grande que quebrava no mobile */
+}
+
+/* NAV – sem position absolute; usa flex e quebra no mobile */
+nav{
+  color: rgb(155, 140, 118);
+  font-size: clamp(1rem, 2vw + 0.25rem, 1.75rem);
+}
+
+nav ul{
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 4vw, 40px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li{
+  /* antes era inline + margin-right fixo */
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible{
+  color: #caa57b;
+  outline: none;
+  text-underline-offset: 3px;
+}
+/*Título*/
+.encomendas-titulo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #af9687;
+    list-style: none;
+}
+
+.encomendas-item:before:before {
+    content: "🎂";
+
+}
+/*Tabela de encomenda*/
+table{
+    width: 100%;
+    margin-bottom: 2%;
+    table-layout: fixed;
+}
+td, th{
+    padding: 10px;
+    margin: 0;
+    border: 1px solid  rgb(155, 140, 118);
+    text-align: center;
+}
+th{
+    font-weight: bold;
+    background-color: #eee;
+}
+.logo_footer{
+    width: 8%;
+    margin: 20px 40px ;
+}
+footer p{
+    color:#af9687;
+    display: inline-block;
+    font-size: 25px;
+    font-family: 'ItalicC';
+    
+}
+footer{
+    background-size: cover;
+    background-blend-mode: darken; 
+    background-color: rgb(244, 240, 236);
+}
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.slider button{
+    background-color: rgb(145, 117, 117);
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+}
+/* ---------- RESPONSIVIDADE ---------- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer p {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+@media (max-width: 900px){
+  .divHeader{
+    flex-wrap: wrap;              /* permite quebrar logo e menu */
+    justify-content: center;      /* centraliza itens quando quebrar */
+    gap: 12px 24px;
+  }
+  nav ul{
+    flex-wrap: wrap;              /* itens do menu podem ir para 2 linhas */
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px){
+  .divHeader{
+    padding: 12px 4vw;
+  }
+  nav ul{
+    gap: 16px;
+  }
+}

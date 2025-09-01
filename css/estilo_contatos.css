@@ -1,0 +1,214 @@
+/* BODY */
+body{
+  margin: 0;
+  border: 0;
+  font-family: 'Monotype Corsiva', 'ItalicC', cursive;
+}
+
+/* HEADER */
+header{
+  background-color: rgb(244, 240, 236);
+}
+
+/* Header container vira flex e sem posicionamentos absolutos */
+.divHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 5vw;
+  position: relative; /* mantém sua classe, mas agora sem nav absoluto */
+}
+
+/* Logo responsiva */
+.logo{
+  width: clamp(120px, 12vw, 180px);
+  height: auto;
+  display: block;
+  /* removido: padding grande que quebrava no mobile */
+}
+
+/* NAV – sem position absolute; usa flex e quebra no mobile */
+nav{
+  color: rgb(155, 140, 118);
+  font-size: clamp(1rem, 2vw + 0.25rem, 1.75rem);
+}
+
+nav ul{
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 4vw, 40px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible{
+  color: #caa57b;
+  outline: none;
+  text-underline-offset: 3px;
+}
+
+/* Banner mantém seu estilo, só garantindo responsividade */
+.banner{
+  width: 100%;
+  min-height: 300px;
+  background-image: url('https://delicious.com.br/wp-content/uploads/2020/10/DSC_0183.jpg');
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+}
+/*Título*/
+.contatos_titulo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #af9687;
+    list-style: none;
+}
+
+.contatos_item:before {
+    content: "🎂";
+
+}
+.texto_contatos {
+    padding-left: 5%;
+    font-family: 'ItalicC';
+    font-size: 24px;
+    
+
+}
+/*Formulário*/
+form{
+	margin-top: 20px;
+	margin-left: 20%;
+    margin-bottom: 0;
+}
+form label, form legend{
+	display: block;
+	font-size: 20px;
+	margin: 0 0 10px;
+}
+fieldset{
+	width: 75%;
+	padding-left: 5%;
+	margin-bottom: 2%;
+}
+.input-padrao{
+	display: block;
+	margin: 0 0 20px;
+	padding: 10px 25px;
+	width: 85%;
+}
+.chk{
+	margin: 20px 0;
+}
+.enviar{
+	width: 40%;
+	padding: 15px 0;
+    margin-bottom: 20px;
+	background: rgb(158, 123, 84);
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	transition: 1s all;
+	cursor: pointer;
+}
+.enviar:hover{
+	background: rgb(216, 181, 140);
+	transform: scale(1.2);
+}
+
+/*Div do retorno do formulário*/
+.divRetorno{
+    display: none;
+    margin-bottom: 15px;
+}
+.divRetorno p{
+    font-size: 24px;
+}
+#mensagem-enviada {
+    display: none; 
+    background-color: #e6f9ea; 
+    color: #2e7d32; 
+    border: 1px solid #2e7d32; 
+    padding: 15px 20px; 
+    border-radius: 8px; 
+    margin-top: 20px; 
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); 
+    max-width: 500px;
+    transition: all 0.3s ease;
+}
+
+.logo_footer{
+    width: 8%;
+    margin: 20px 40px ;
+}
+footer p{
+    color:#af9687;
+    display: inline-block;
+    font-size: 25px;
+    font-family: 'ItalicC';
+    
+}
+footer{
+    background-size: cover;
+    background-blend-mode: darken; 
+    background-color: rgb(244, 240, 236);
+}
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.slider button{
+    background-color: rgb(145, 117, 117);
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+}
+/* ---------- RESPONSIVIDADE ---------- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer p {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+@media (max-width: 900px){
+  .divHeader{
+    flex-wrap: wrap;              /* permite quebrar logo e menu */
+    justify-content: center;      /* centraliza itens quando quebrar */
+    gap: 12px 24px;
+  }
+  nav ul{
+    flex-wrap: wrap;              /* itens do menu podem ir para 2 linhas */
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px){
+  .divHeader{
+    padding: 12px 4vw;
+  }
+  nav ul{
+    gap: 16px;
+  }
+}

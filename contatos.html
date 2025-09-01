@@ -1,0 +1,115 @@
+<html">
+
+    <head>
+        <link href="css/estilo_contatos.css" rel="stylesheet">
+        <title>Vanilla Doces</title>
+        <link rel="icon" href="img/cake.ico" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+
+    <body>
+        <header>
+            <div class="divHeader">
+                <img src="img/logotipo.png" alt="Vanilla Doces" title="Sil Fazendo Arte" class="logo" />
+
+                <nav aria-label="Navegação principal">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="contatos.html">Contatos</a></li>
+                        <li><a href="encomendas.html">Encomendas</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="banner"></div>
+        </header>
+        <main>
+            <!--Título-->
+            <ul class="contatos_titulo">
+                <li class="contatos_item">Contatos</li>
+            </ul>
+            <p class="texto_contatos">Tem alguma dúvida, sugestão ou só quer bater um papo com a gente? Vamos adorar
+                ouvir você! 💬<br>Seja para encomendar aquele bolo dos sonhos, reservar uma mesa especial ou saber mais
+                sobre nossos produtos artesanais, estamos por aqui.<br><br>📍Endereço: Rua Haddock Lobo, 354 - Cerqueira
+                César, São Paulo - SP<br>📞Telefone/WhatsApp: (11)94666-7938<br>📧E-mail:
+                vanilladoces@gmail.com<br>📱Redes sociais: Nos siga e mande um alô no @vanilladoces<br><br>Preencha o
+                formulário abaixo ou envie uma mensagem direto por WhatsApp — responderemos rapidinho!</br></p>
+            <form id="frmContato">
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    <label>* Nome e sobrenome</label>
+                    <input type="text" id="nomesobrenome" name="" class="input-padrao" required>
+
+                    <label>E-mail</label>
+                    <input type="email" id="email" name="" class="input-padrao" placeholder="seuemail@dominio.com">
+
+                    <label>Telefone</label>
+                    <input type="tel" id="telefone" name="" class="input-padrao" placeholder="(XX) XXXXX-XXXX">
+
+                    <label>* Mensagem</label>
+                    <textarea cols="70" rows="10" id="mensagem" class="input-padrao" required></textarea>
+
+                    <label>Como prefere o nosso contato?
+                        <input type="radio" value="radio-mail" name="Contato"> E-mail
+                        <input type="radio" value="radio-telefone" name="Contato"> Telefone
+                        <input type="radio" value="radio-whatsapp" name="Contato"> Whatsapp
+                    </label>
+
+                    <br>
+                    <label>Qual o motivo do seu contato?
+                        <select>
+                            <option>Selecione</option>
+                            <option>Dúvida</option>
+                            <option>Sugestão</option>
+                            <option>Elogio</option>
+                            <option>Reclamação</option>
+                        </select>
+                    </label>
+                    <br>
+                </fieldset>
+
+                <label><input type="checkbox" class="chk"> Gostaria de receber nossas novidades por e-mail?</label>
+
+                <input type="submit" id="enviar" value="Enviar formulário" class="enviar">
+                <div id="mensagem-enviada">
+                    Obrigada pelo contato! Em breve retornaremos ✅
+                </div>
+            </form>
+        </main>
+        <footer>
+            <img src="img/logotipo.png" title="Vanilla Doces" class="logo_footer" />
+            <p>
+                Faça sua encomenda:
+                <i class="fa fa-whatsapp"></i>
+                <a href="https://wa.me/5511949552210" target="_blank">(11) 94955-2210</a>
+                e
+                <i class="fa fa-instagram"></i>
+                Conheça nosso Instagram:
+                <a href="https://www.instagram.com/vanilla_doces_/" target="_blank">@vanilla_doces_</a>
+            </p>
+        </footer>
+        <script>
+            const form = document.getElementById('frmContato');
+            const mensagem = document.getElementById('mensagem-enviada');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); // Impede que o formulário recarregue a página
+
+                // Aqui você pode colocar o que quiser para processar os dados (se quiser enviar para um servidor futuramente)
+
+                // Exibir a mensagem de agradecimento
+                mensagem.style.display = 'block';
+
+                // Limpar os campos do formulário
+                form.reset();
+
+                // Opcional: sumir a mensagem depois de alguns segundos
+                setTimeout(() => {
+                    mensagem.style.display = 'none';
+                }, 5000); // 5000 = 5 segundos
+            });
+        </script>
+    </body>
+
+    </html>

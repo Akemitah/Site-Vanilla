@@ -1,0 +1,219 @@
+/* BODY */
+body{
+  margin: 0;
+  border: 0;
+  font-family: 'Monotype Corsiva', 'ItalicC', cursive;
+}
+
+/* HEADER */
+header{
+  background-color: rgb(244, 240, 236);
+}
+
+/* Header container vira flex e sem posicionamentos absolutos */
+.divHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 5vw;
+  position: relative; /* mantém sua classe, mas agora sem nav absoluto */
+}
+
+/* Logo responsiva */
+.logo{
+  width: clamp(120px, 12vw, 180px);
+  height: auto;
+  display: block;
+  /* removido: padding grande que quebrava no mobile */
+}
+
+/* NAV – sem position absolute; usa flex e quebra no mobile */
+nav{
+  color: rgb(155, 140, 118);
+  font-size: clamp(1rem, 2vw + 0.25rem, 1.75rem);
+}
+
+nav ul{
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 4vw, 40px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible{
+  color: #caa57b;
+  outline: none;
+  text-underline-offset: 3px;
+}
+
+/* Banner mantém seu estilo, só garantindo responsividade */
+.banner{
+  width: 100%;
+  min-height: 300px;
+  background-image: url('https://delicious.com.br/wp-content/uploads/2020/10/DSC_0183.jpg');
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/*Estilização da sessão SOBRE NÓS*/
+.sobre_nos {
+    margin: 0;
+    text-align: justify;
+    width: 70%;
+    margin-left: 12%;
+    margin-top: 100px; /* Adicionado para empurrar tudo para baixo */
+}
+.sobre_nos p{
+    font-size: 24px;
+    line-height: 1.5;
+    padding-bottom: 10%;
+    font-family: 'ItalicC';
+    margin-top: 100px; /* Adicione esta linha ou aumente o valor se já existir */
+}
+.img_sobrenos {
+    width: 30%;
+    float: left;
+    margin-right: 20px;
+}
+.titulo_sobrenos {
+    text-align: center;
+    clear: left;
+    font-size : 40px; 
+}
+
+/*Nosso estabelecimento*/
+.titulo_estabelecimento {
+    text-align: center;
+    font-size : 30px; 
+}
+
+/*Mapa Geral*/
+.mapa {
+    margin-left: 30%;
+}
+
+/*Nossos Produtos*/
+.nossosprodutos{
+    padding: 2%;
+    background: linear-gradient(#dad4f1, rgb(180, 111, 180));
+}
+.div_nossosprodutos{
+    width: 70%;
+    margin-left: 40%;
+}
+.lista_nossosprodutos{
+    width: 40%;
+    display: inline-block;
+    vertical-align: "top";
+    list-style: none;
+    position: absolute;
+    right: 10%;
+    font-family: 'ItalicC';
+}
+.lista_nossosprodutos li{
+    line-height: 3;
+}
+.lista_nossosprodutos li:before{
+    content: "★ ";
+}
+.titulo_nossosprodutos {
+    text-align: center;
+    clear: left;
+    padding-top: 2%;
+    font-size : 30px; 
+}
+.img_nossosprodutos{
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 10px 10px 5px 0px #000000;
+    opacity: 1;
+    transition: 400ms;
+    float: right;
+    margin-right: 90%;
+
+}
+.img_nossosprodutos:hover{
+    opacity: 0.5;
+}
+.video{
+    padding: 25% 0 3% 25%;
+}
+
+.logo_footer{
+    width: 8%;
+    margin: 20px 40px ;
+}
+footer p{
+    color:#af9687;
+    display: inline-block;
+    font-size: 25px;
+    font-family: 'ItalicC';
+    
+}
+footer{
+    background-size: cover;
+    background-blend-mode: darken; 
+    background-color: rgb(244, 240, 236);
+}
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.slider button{
+    background-color: rgb(145, 117, 117);
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+}
+/* ---------- RESPONSIVIDADE ---------- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer p {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+@media (max-width: 900px){
+  .divHeader{
+    flex-wrap: wrap;              /* permite quebrar logo e menu */
+    justify-content: center;      /* centraliza itens quando quebrar */
+    gap: 12px 24px;
+  }
+  nav ul{
+    flex-wrap: wrap;              /* itens do menu podem ir para 2 linhas */
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px){
+  .divHeader{
+    padding: 12px 4vw;
+  }
+  nav ul{
+    gap: 16px;
+  }
+}

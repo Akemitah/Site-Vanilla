@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <link href="css/estilo_produtos.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <title>Vanilla Doces</title>
+    <link rel="icon" href="img/cake.ico" type="image/x-icon">
+    <script>
+        alert("Conheça nossa linha de produtos");
+        data = new Date
+        dia = new Array("Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado")
+        mes = new Array("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro")
+        //Função para abrir a pop de detalhe do produto
+        function abrirDetalhes(nome, imagem, descricao) {
+            const url = `pop_produto.html?nome=${encodeURIComponent(nome)}&imagem=${encodeURIComponent(imagem)}&descricao=${encodeURIComponent(descricao)}`;
+            window.open(url, "_blank", "width=800,height=700")
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="divHeader">
+            <img src="img/logotipo.png" title="Sil Fazendo Arte" class="logo" />
+            <nav>
+                <ul>
+                    <li><a href="index.html"> Home</a></li>
+                    <li> Produtos</li>
+                    <li><a href="contatos.html">Contatos</a></li>
+                    <li><a href="encomendas.html">Encomendas</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="banner"></div>
+    </header>
+    <!--Conteúdo do site-->
+    <main>
+        <!--Título-->
+        <ul class="produtos_titulo">
+            <li class="produtos_item">Produtos</li>
+        </ul>
+        <p style="text-align: right; margin-right: 30px;">
+            <script>
+                document.write(dia[data.getDay()] + ", " + data.getDate() + " de " + mes[data.getMonth()] + " de " + data.getFullYear());
+            </script>
+        </p>
+        <p class="texto_produtos">
+            Conheça nosso espaço e faça seu pedido!
+            <br><br>
+            Nossos produtos são feitos também por encomenda, entre em contado conosco
+        </p>
+        <div class="container">
+            <script>
+                desc_produto1 = "Brigadeiros com sabor de afeto e toque gourmet!\n\nDelicados, cremosos e feitos na medida certa para adoçar seus melhores momentos. Nossos brigadeiros combinam ingredientes de alta qualidade com aquele toque caseiro que faz toda a diferença. Seja para montar uma caixa-presente, compor a mesa da sua festa ou simplesmente se mimar — cada mordida é uma explosão de sabor e carinho."
+                slider1 = ['img/brigadeiro1.jpg', 'img/brigadeiro2.jpg', 'img/brigadeiro3.jpg'];
+            </script>
+            <div class="card" onclick="abrirDetalhes('Brigadeiros',slider1,desc_produto1)">
+                <img src="img/brigadeiros.jpg" />
+                <h2>Brigadeiros</h2>
+                <p>Chocolate, beijinho, bicho de pé, camafeu e maracujá</p>
+                <span class="preco">R$10 o kit</span>
+            </div>
+            <div class="container">
+                <script>
+                    desc_produto2 = "Charme, sabor e fofura em cada mordida! \n\nNossos cupcakes são feitos artesanalmente, com massas leves e recheios irresistíveis. Cada um é uma mini obra-prima, decorado com capricho e perfeito para tornar qualquer ocasião ainda mais doce. Festas, presentes, lembrancinhas ou aquele momento só seu — os nossos cupcakes são pequenos no tamanho, mas cheios de sabor e personalidade."
+                    slider2 = ['img/cupcakes1.jpg', 'img/cupcakes2.jpg', 'img/cupcakes3.jpg'];
+                </script>
+                <div class="card" onclick="abrirDetalhes('Cupcakes',slider2,desc_produto2)">
+                    <img src="img/cupcake.jpg" />
+                    <h2>Cupcakes</h2>
+                    <p>Chocolate, morango, pão de ló, cereja, franbuesa e blueberry </p>
+                    <span class="preco">R$15 a unidade</span>
+                </div>
+                <div class="container">
+                    <script>
+                        desc_produto3 = "Descubra o sabor que derrete na boca! \n\nNossos brownies são feitos com chocolate de alta qualidade, ingredientes frescos e aquele toque artesanal que faz toda a diferença. Perfeitos para adoçar o seu dia, surpreender alguém especial ou acompanhar um bom café. Crocantes por fora, macios por dentro — uma explosão de sabor em cada mordida!"
+                        slider3 = ['img/brownie1.jpg', 'img/brownie2.jpg', 'img/brownie3.jpg'];
+                    </script>
+                    <div class="card" onclick="abrirDetalhes('Brawnies',slider3,desc_produto3)">
+                        <img src="img/brawnies.jpg" />
+                        <h2>Brawnies</h2>
+                        <p>Chocolate e chocolate branco, pistache e limão siciliano </p>
+                        <span class="preco">R$10 o kit</span>
+                    </div>
+                    <div class="container">
+                        <script>
+                            //Define a descrição do produto
+                            desc_produto4 = "Descubra os sabores que encantam! \n\nFeitos com ingredientes selecionados e muito carinho, nossos bolos são perfeitos para transformar qualquer momento em uma celebração. Seja para um café da tarde, uma data especial ou para presentear alguém querido — aqui você encontra o bolo ideal."
+                            slider4 = ['img/bolos1.jpg', 'img/bolos2.jpg', 'img/bolos3.jpg'];
+                        </script>
+                        <div class="card" onclick="abrirDetalhes('Bolos',slider4,desc_produto4)">
+                            <img src="img/bolos.jpg" />
+                            <h2>Bolos</h2>
+                            <p>Sabores diversos! Verifique a disponibilidade </p>
+                            <span class="preco">R$10 o kit</span>
+                        </div>
+    </main>
+    <!--Rodapé-->
+    <footer>
+        <img src="img/logotipo.png" title="Sil Fazendo Arte" class="logo_footer" />
+        <p>Faça sua encomeda: <i class="fa fa-whatsapp"></i> <a href=""></a>(11) 94955-2210 e <i
+                class="fa fa-instagram"></i> Conheça
+            nosso Intagram: vanilladoces</p>
+    </footer>
+</body>
+
+</html>

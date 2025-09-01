@@ -1,0 +1,228 @@
+/* BODY */
+body{
+  margin: 0;
+  border: 0;
+  font-family: 'Monotype Corsiva', 'ItalicC', cursive;
+}
+
+/* HEADER */
+header{
+  background-color: rgb(244, 240, 236);
+}
+
+/* Header container vira flex e sem posicionamentos absolutos */
+.divHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 5vw;
+  position: relative; /* mantém sua classe, mas agora sem nav absoluto */
+}
+
+/* Logo responsiva */
+.logo{
+  width: clamp(120px, 12vw, 180px);
+  height: auto;
+  display: block;
+  /* removido: padding grande que quebrava no mobile */
+}
+
+/* NAV – sem position absolute; usa flex e quebra no mobile */
+nav{
+  color: rgb(155, 140, 118);
+  font-size: clamp(1rem, 2vw + 0.25rem, 1.75rem);
+}
+
+nav ul{
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 4vw, 40px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible{
+  color: #caa57b;
+  outline: none;
+  text-underline-offset: 3px;
+}
+.banner{
+  width: 100%;
+  min-height: 300px;
+  background-image: url('https://delicious.com.br/wp-content/uploads/2020/10/DSC_0183.jpg');
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+
+}
+/*Título*/
+.produtos_titulo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #af9687;
+    list-style: none;
+}
+
+.produtos_item:before {
+    content: "🎂";
+
+}
+
+.texto_produtos {
+    padding-left: 5%;
+    font-family: 'ItalicC';
+    font-size: 20px;
+
+}
+
+.logo_footer{
+    width: 8%;
+    margin: 20px 40px ;
+}
+footer p{
+  color:#af9687;
+  display: inline-block;
+  font-size: 25px;
+  font-family: 'ItalicC';
+    
+}
+footer{
+    background-size: cover;
+    background-blend-mode: darken; 
+    background-color: rgb(244, 240, 236);
+}
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.slider button{
+    background-color: rgb(145, 117, 117);
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 20px;
+    font-family: 'ItalicC';
+}
+/*Estilização do cards*/
+.card{
+    background: #f8ece4;
+    width: 300px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 0 8px #917a6c;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3 ease-in-out;
+
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.card img{
+    width:100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius:10px;
+}
+.card h2{
+    margin: 10px 0;
+}
+.preco{
+    font-size: 18px;
+    font-weight: bold;
+    color:#917a6c;
+    margin: 10px 0;
+
+}
+
+/*Estilização da POP de detalhes do produto*/
+.pop {
+    display: flex;
+    margin: 0;
+    background: #f8ece4;
+    flex-direction: column;
+    align-items: center;
+}
+.pop p{
+  white-space: pre-line;
+  font-size: 18px;
+  line-height: 1.5;
+  padding-bottom: 10%;
+  font-family: 'ItalicC';
+
+}
+.pop img{
+  width:300;
+  height:400;
+  border-radius: 20px;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.slider button{
+    background-color: rgb(17, 16, 17);
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+}
+/* ---------- RESPONSIVIDADE ---------- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer p {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+@media (max-width: 900px){
+  .divHeader{
+    flex-wrap: wrap;              /* permite quebrar logo e menu */
+    justify-content: center;      /* centraliza itens quando quebrar */
+    gap: 12px 24px;
+  }
+  nav ul{
+    flex-wrap: wrap;              /* itens do menu podem ir para 2 linhas */
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px){
+  .divHeader{
+    padding: 12px 4vw;
+  }
+  nav ul{
+    gap: 16px;
+  }
+}
