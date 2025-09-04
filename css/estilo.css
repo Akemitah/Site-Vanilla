@@ -103,7 +103,9 @@ a:focus-visible{
 
 /*Mapa Geral*/
 .mapa {
-    margin-left: 30%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; 
 }
 
 /*Nossos Produtos*/
@@ -120,9 +122,9 @@ a:focus-visible{
     display: inline-block;
     vertical-align: "top";
     list-style: none;
-    position: absolute;
     right: 10%;
     font-family: 'ItalicC';
+    padding-left: 20%;
 }
 .lista_nossosprodutos li{
     line-height: 3;
